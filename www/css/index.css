@@ -113,3 +113,14 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+
+#paybutton {
+    background-color: #6c89d9;
+    border: 0;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 3px;
+    color: white;
+    margin: 20px;
+    cursor: pointer;
+}
