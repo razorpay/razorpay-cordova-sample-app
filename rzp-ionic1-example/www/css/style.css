@@ -1,0 +1,9 @@
+/* Empty. Add your own CSS if you like */
+
+.app {
+  position: absolute;
+  left: 50%;
+  display: inline-block;
+  transform: translate(-50%, 25%);
+  text-align: center;
+}
