@@ -1,0 +1,49 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"Checkout\"><param name=\"browser-package\" value=\"Checkout\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "com.razorpay.cordova": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
+        }
+    },
+    "dependent_plugins": {},
+    "modules": [
+        {
+            "file": "plugins/com.razorpay.cordova/www/RazorpayCheckout.js",
+            "id": "com.razorpay.cordova.RazorpayCheckout",
+            "pluginId": "com.razorpay.cordova",
+            "clobbers": [
+                "RazorpayCheckout"
+            ]
+        },
+        {
+            "file": "plugins/com.razorpay.cordova/src/browser/CheckoutProxy.js",
+            "id": "com.razorpay.cordova.CheckoutProxy",
+            "pluginId": "com.razorpay.cordova",
+            "runs": true
+        }
+    ],
+    "plugin_metadata": {
+        "cordova-plugin-whitelist": "1.2.2",
+        "com.razorpay.cordova": "0.11.0"
+    }
+}
