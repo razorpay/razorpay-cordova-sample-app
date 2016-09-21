@@ -51,7 +51,6 @@ myApp.controller('RZPController', function($scope, $ionicPlatform) {
 
   $ionicPlatform.ready(function(){
     $scope.pay = function() {
-      debugger;
       RazorpayCheckout.open(options, successCallback, cancelCallback);
     }
   });
