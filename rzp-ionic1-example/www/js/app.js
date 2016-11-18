@@ -41,17 +41,26 @@ myApp.controller('RZPController', function($scope, $ionicPlatform) {
     }
   };
 
+  // `ng-click` is triggered twice on ionic. (See https://github.com/driftyco/ionic/issues/1022).
+  // This is a dirty flag to hack around it
+  var called = false
+
   var successCallback = function(payment_id) {
     alert('payment_id: ' + payment_id);
+    called = false
   };
 
   var cancelCallback = function(error) {
     alert(error.description + ' (Error ' + error.code + ')');
+    called = false
   };
 
   $ionicPlatform.ready(function(){
     $scope.pay = function() {
-      RazorpayCheckout.open(options, successCallback, cancelCallback);
+      if (!called) {
+        RazorpayCheckout.open(options, successCallback, cancelCallback);
+        called = true
+      }
     }
   });
 })
