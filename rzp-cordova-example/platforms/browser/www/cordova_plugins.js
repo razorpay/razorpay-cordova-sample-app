@@ -19,7 +19,7 @@ module.exports.metadata =
 // TOP OF METADATA
 {
     "cordova-plugin-whitelist": "1.2.2",
-    "com.razorpay.cordova": "0.11.0"
+    "com.razorpay.cordova": "0.13.1"
 }
 // BOTTOM OF METADATA
 });
