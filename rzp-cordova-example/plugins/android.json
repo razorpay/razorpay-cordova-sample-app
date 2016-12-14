@@ -7,10 +7,10 @@
         "files": {}
     },
     "installed_plugins": {
-        "com.razorpay.cordova": {
+        "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
         },
-        "cordova-plugin-whitelist": {
+        "com.razorpay.cordova": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
         }
     },

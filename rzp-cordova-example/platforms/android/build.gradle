@@ -241,6 +241,7 @@ dependencies {
     // SUB-PROJECT DEPENDENCIES START
     debugCompile project(path: "CordovaLib", configuration: "debug")
     releaseCompile project(path: "CordovaLib", configuration: "release")
+    compile "com.razorpay:checkout:1.2.0"
     // SUB-PROJECT DEPENDENCIES END
 }
 
