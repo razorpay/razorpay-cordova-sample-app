@@ -1,14 +1,18 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Razorpay Ionic 3 Demo
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content padding style="text-align: center; margin-top: 70px;">
+  <h2>Razorpay Ionic 3 Demo</h2>
+  <img style="width: 300px; display: inline-block" src="./assets/icon/demo-tshirt.svg" />
+
+  <div>
+    <button ion-button (click)="pay()">
+      Pay with Razorpay
+    </button>
+  </div>
 </ion-content>
