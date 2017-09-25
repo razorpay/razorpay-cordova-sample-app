@@ -28,12 +28,17 @@ export class HomePage {
       }
     };
 
-    var successCallback = function(payment_id) {
+    var successCallback = (payment_id) => {
       alert('payment_id: ' + payment_id);
+      //Navigate to another page using the nav controller
+      //this.navCtrl.setRoot(SuccessPage)
+      //Inject the necessary controller to the constructor
     };
 
-    var cancelCallback = function(error) {
+    var cancelCallback = (error) => {
       alert(error.description + ' (Error ' + error.code + ')');
+      //Navigate to another page using the nav controller
+      //this.navCtrl.setRoot(ErrorPage)
     };
 
     RazorpayCheckout.open(options, successCallback, cancelCallback);
