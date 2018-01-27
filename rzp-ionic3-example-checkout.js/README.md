@@ -1,4 +1,4 @@
-# rzp-ionic3-sample-app
+# rzp-ionic3-sample-app-checkout.js
 
 Razorpay cordova demo on [ionic v3](http://ionicframework.com)
 
