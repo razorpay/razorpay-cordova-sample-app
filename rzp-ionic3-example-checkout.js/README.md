@@ -4,24 +4,19 @@ Razorpay cordova demo on [ionic v3](http://ionicframework.com)
 
 ## Steps
 
-- Install the `razorpay-cordova` plugin
-
-```bash
-cd your-project-folder
-cordova platform add android      # optional
-cordova platform add ios          # optional
-cordova platform add browser      # optional
-cordova plugin add https://github.com/razorpay/razorpay-cordova.git --save
+- No need to install the `razorpay-cordova` plugin
+- script in index.js
+```
+  <script  id="rzp" src="https://checkout.razorpay.com/v1/checkout.js"></script>
 ```
 
-- Declare the `RazorpayCheckout` type in the `declarations.d.ts` as
+- Declare the `Razorpay` type in the `declarations.d.ts` as
 ```js
-declare var RazorpayCheckout: any;
+declare var Razorpay: any;
 ```
-This helps the typescript compiler to understand the type of RazorpayCheckout's object. Refer this commit https://github.com/razorpay/razorpay-cordova-sample-app/commit/9434f8309f08426621468c1c9cc5a1b27e299fe6
+This helps the typescript compiler to understand the type of Razorpay's object. Refer this commit https://github.com/razorpay/razorpay-cordova-sample-app/commit/9434f8309f08426621468c1c9cc5a1b27e299fe6
 
 
 ## Important note
 
-`ionic serve` doesn't support cordova browser plugins at the moment. See [driftyco/ionic-cli#354](https://github.com/driftyco/ionic-cli/issues/354).
-This comment however workarounds the issue https://github.com/ionic-team/ionic-cli/issues/354#issuecomment-269223842
+`ionic serve` now works with this type of integration!
