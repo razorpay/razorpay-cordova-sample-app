@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="com.razorpay.cordova"
+        version="0.16.1">
+
+  <name>RazorpayCheckout</name>
+  <description>Razorpay's Plugin for Checkout</description>
+  <author>Razorpay</author>
+  <keywords>razorpay,payments,payment,gateway,checkout</keywords>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+
+  <asset src="www/RazorpayCheckout.js" target="js/RazorpayCheckout.js"/>
+
+  <js-module src="www/RazorpayCheckout.js" name="RazorpayCheckout">
+    <clobbers target="RazorpayCheckout" />
+  </js-module>
+
+  <!-- Android -->
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="Checkout">
+        <param name="android-package" value="com.razorpay.cordova.Main"/>
+      </feature>
+    </config-file>
+    <framework src="com.razorpay:checkout:1.5.2"/>
+    <source-file src="src/android/Main.java" target-dir="src/com/razorpay/cordova/"/>
+  </platform>
+
+  <!-- iOS -->
+  <platform name="ios">
+      <config-file target="config.xml" parent="/widget">
+          <feature name="Checkout">
+              <param name="ios-package" value="Main" />
+          </feature>
+      </config-file>
+
+      <header-file src="src/ios/Main.h" target-dir="Razorpay"/>
+      <source-file src="src/ios/Main.m" target-dir="Razorpay"/>
+      <framework src="src/ios/Razorpay.framework" custom="true" />
+      <framework src="CoreTelephony.framework" />
+      <framework src="SystemConfiguration.framework" />
+  </platform>
+
+  <!-- Browser -->
+  <platform name="browser">
+    <config-file target="config.xml" parent="/*">
+      <feature name="Checkout">
+        <param name="browser-package" value="Checkout" />
+      </feature>
+    </config-file>
+    <js-module src="src/browser/CheckoutProxy.js" name="CheckoutProxy">
+      <runs />
+    </js-module>
+  </platform>
+</plugin>

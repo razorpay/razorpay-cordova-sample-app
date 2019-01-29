@@ -23,5 +23,6 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+    <engine name="ios" spec="~4.5.5" />
     <plugin name="com.razorpay.cordova" spec="https://github.com/razorpay/razorpay-cordova.git" />
 </widget>
