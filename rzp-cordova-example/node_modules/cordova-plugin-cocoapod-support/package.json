@@ -1,0 +1,73 @@
+{
+  "_from": "cordova-plugin-cocoapod-support",
+  "_id": "cordova-plugin-cocoapod-support@1.6.2",
+  "_inBundle": false,
+  "_integrity": "sha512-xcKRqXfr3to7Twdoe31lgkPe0IJqnR6wOaYD6lps4Or0kJGc2uAzipDS3kF6FxQUKcXY7PcvGJSvsYGPJwHVIw==",
+  "_location": "/cordova-plugin-cocoapod-support",
+  "_phantomChildren": {
+    "glob": "7.1.6",
+    "interpret": "1.2.0",
+    "rechoir": "0.6.2"
+  },
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-plugin-cocoapod-support",
+    "name": "cordova-plugin-cocoapod-support",
+    "escapedName": "cordova-plugin-cocoapod-support",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-cocoapod-support/-/cordova-plugin-cocoapod-support-1.6.2.tgz",
+  "_shasum": "e3efa35e537e1956ec7a3304c4752d8e9c2bb338",
+  "_spec": "cordova-plugin-cocoapod-support",
+  "_where": "/Users/sachinnautiyal/Documents/Razorpay/razorpay-cordova-sample-app/rzp-cordova-example",
+  "bugs": {
+    "url": "https://github.com/blakgeek/cordova-plugin-cocoapods-support/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-cocoapod-support",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "dependencies": {
+    "lodash": "^4.17.2",
+    "q": "^1.5.1",
+    "semver": "^5.3.0",
+    "shelljs": "^0.7.5",
+    "xml2js": "^0.4.16"
+  },
+  "deprecated": false,
+  "description": "A Cordova/PhoneGap plugin to add support for Cocoapod dependencies.",
+  "devDependencies": {
+    "libxmljs": "^0.18.4"
+  },
+  "homepage": "https://github.com/blakgeek/cordova-plugin-cocoapods-support",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova:plugin",
+    "cocoapods",
+    "pod",
+    "pods",
+    "plugin"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-cocoapod-support",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blakgeek/cordova-plugin-cocoapods-support.git"
+  },
+  "scripts": {
+    "postversion": "node scripts/bump-plugin-xml.js; git add plugin.xml; git commit plugin.xml -m \"v${npm_package_version}\""
+  },
+  "version": "1.6.2"
+}
