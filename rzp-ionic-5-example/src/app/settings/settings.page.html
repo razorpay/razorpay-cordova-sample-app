@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar color="cusprimdark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-img class="logo" src="assets/rzp_logo.svg"></ion-img>
+  </ion-toolbar>
+ </ion-header>
+
+<ion-content>
+
+  <div id="settings_text">
+    Settings
+  </div>
+  <div id="settings_desc_text">
+    Customize Razorpay checkout to suit your theme
+  </div>
+
+  <ion-item-divider style="height: 1px; color: #E7EBF1;"></ion-item-divider>  
+
+  <div class="main_heading" style="margin-top: 27px; margin-left: 24px;margin-bottom: 10px;">
+    COMPANY LOGO
+  </div>
+  <!-- <div class="block">
+    <ion-label class="sub_heading">Company Image URL</ion-label>
+    <ion-input class="text_input" placeholder="Enter Company image URL here"></ion-input>
+  </div> -->
+  <div class="block">
+    <div class="sub_heading" >
+      Company Image URL
+    </div>
+    <div class="text_input">
+      <ion-input [(ngModel)]="imageUrl" placeholder="Enter Image URL here"></ion-input>
+    </div>
+    <div class="desc" style="margin-bottom: 20px;">
+      It should be a square image of minimum 256x256
+    </div>
+  </div>
+
+  <div class="main_heading" style="margin-top: 27px; margin-left: 24px;margin-bottom: 10px;">
+    BRAND DETAILS
+  </div>
+  <!-- <div class="block">
+    <ion-label class="sub_heading">Company Image URL</ion-label>
+    <ion-input class="text_input" placeholder="Enter Company image URL here"></ion-input>
+  </div> -->
+  <div class="block">
+    <div class="sub_heading" >
+      Company Name
+    </div>
+    <div class="text_input">
+      <ion-input [(ngModel)]="companyName" placeholder="Razorpay Demo"></ion-input>
+    </div>
+    <div class="desc">
+      This will be visible on checkout
+    </div>
+  
+    <ion-item-divider style="height: 1px; color: #E7EBF1;"></ion-item-divider>  
+  
+  <div class="sub_heading" >
+    Theme Color
+  </div>
+  <div class="text_input color-box" [style.background-color]=inputColor></div>
+  <div class="text_input" style="margin-left: 0px;">
+    <ion-input  placeholder="#0B70E7" [(ngModel)]="inputColor" (ngModelChange)="checkColor(inputColor)"></ion-input>
+  </div>
+  <div class="desc" style="margin-bottom: 20px;">
+   Choose a theme color for your brand
+  </div>
+  </div>
+  <ion-button class="paynowBtn" (click)="saveSettings()" color="cusprimdark">Save Settings</ion-button>
+
+</ion-content>

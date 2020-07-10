@@ -1,33 +1,50 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>      
-      Razorpay Ionic 5 Demo
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content >
-  <ion-row>
-    <ion-col size="3">
-      <img src="../../assets/1505.jpg"/>
-      <img src="../../assets/1505.jpg"/>
-      <img src="../../assets/1505.jpg"/>
-
-    </ion-col>
-    <ion-col size="8">
-      <img src="../../assets//1505.jpg"/>
-    </ion-col>
-  </ion-row>
-  
-  <h2 style="padding-left: 2%;color: black; opacity: 0.8;">Fine T-Shirt</h2>
-  <div style="padding-left: 1.5%;">
-    <img height="30" width="50" src="../../assets/stars.svg"/>
-    <img height="30" width="50" src="../../assets/stars.svg"/>
-    <img height="30" width="50" src="../../assets/stars.svg"/>
-    <img height="30" width="50" src="../../assets/stars.svg"/>
-    <img height="30" width="50" src="../../assets/stars.svg"/>
+  <ion-item class="heading" color="cusprimdark">
+    <ion-img class="logo" src="assets/rzp_logo.svg"></ion-img>
+    <ion-img style="padding-right: 10;" width="100" height="100" src="assets/settings.svg" routerLink="/settings" routerDirection="root"></ion-img>
+  </ion-item>
+  <ion-item color="cusprimary">
+      <ion-label style="font-family: Lato-Medium;">
+        Integrate Razorpay with your business
+      </ion-label>
+     <div text-center slot="end">
+        <ion-img width="100" height="100" src="assets/arrow_right.svg"></ion-img>
+      </div>
+  </ion-item>
+  <ion-item lines="none" style="padding-top:20px">
+    <ion-label style="font-family: Lato-Bold; font-size: 24px;" color="custextdark">My Cart</ion-label>
+  </ion-item>
+  <div class="container">
+    <div class="demo"><img style=" background-color:rgba(22, 47, 86, 0.1);height: 80px; width: 80px;" src="../../assets/tshirt.svg"/></div>
+    <div class="demo" style="padding-left: 16px;">
+      <div style="color: rgba(22, 47, 86, 0.87);font-family: Lato-Bold; font-size: 14px;padding-bottom: 4px;">Sample T Shirt</div>
+      <div class="demo1" style="font-family:Lato-Normal">Color :</div>
+      <div class="demo1 item_det" style="font-family: Lato-Normal;"> Black</div>
+      <div class="demo1" style="padding-left: 20px; font-family: Lato-Normal;">Size :</div>
+      <div class="demo1 item_det" style="font-family: Lato-Normal;"> L</div>
+      <div class="item_prize" style="font-family: Lato-Bold">₹1.00</div>
+    </div>
+    
+    
   </div>
-  <h3 style="padding-left: 2%; color: black;">₹1.00</h3>
-  <p style="padding-left: 2%; text-align: left;">Razorpay provides an end-to-end online payments solution. We accept and validate Internet payments via Credit Card, Debit Card, Net-Banking, UPI and popular Wallets from the end customers in real-time.  </p>
-  <ion-button style="padding-left: 2%;" (click)="payWithRazorpay()">Pay With Razorpay</ion-button>
+
+  
+ 
+  <div class="warning" lines="none">
+    <p class="text_warning">This is a demo application. We will not deliver any actual product. Any payments you make will be refunded back to your account automatically.</p>
+  </div>
+
+  <ion-button  class="paynowBtn" color="primary" (click)="payWithRazorpay()">Pay Now</ion-button>
+
+  <div class="footnote">
+    <div class="total_amount">
+    Total Amount
+    </div>
+    <div class="amt_rs">
+      ₹1.00
+    </div>
+  </div>
+
+  <!-- <ion-button color="cusprimary">Hello</ion-button>
+  <ion-button style="padding-left: 2%;" (click)="payWithRazorpay()">Pay With Razorpay</ion-button> -->
 </ion-content>

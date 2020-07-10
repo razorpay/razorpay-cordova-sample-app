@@ -24,3 +24,31 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+//fonts
+@font-face{
+    font-family: 'Lato-Bold';
+    src: url('./assets/fonts/lato_bold.ttf');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face{
+    font-family: 'Lato-Normal';
+    src: url('./assets/fonts/lato_normal.ttf');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face{
+    font-family: 'Lato-Medium';
+    src: url('./assets/fonts/lato_medium.ttf');
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face{
+    font-family: 'Lato-SemiBold';
+    src: url('./assets/fonts/lato_semibold.ttf');
+    font-style: normal;
+    font-weight: normal;
+}

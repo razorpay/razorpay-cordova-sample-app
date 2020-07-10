@@ -29,3 +29,144 @@
 ion-content ion-toolbar {
   --background: translucent;
 }
+
+.integrate_rzp{
+  background-color: #4B95ED;
+}
+
+
+.ion-color-cusprimary {
+  --ion-color-base: var(--ion-color-cusprimary);
+  --ion-color-base-rgb: var(--ion-color-cusprimary-rgb);
+  --ion-color-contrast: var(--ion-color-cusprimary-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-cusprimary-contrast-rgb);
+  --ion-color-shade: var(--ion-color-cusprimary-shade);
+  --ion-color-tint: var(--ion-color-cusprimary-tint);
+}
+
+.ion-color-cusprimdark{
+  --ion-color-base: var(--ion-color-cusprimdark);
+  --ion-color-base-rgb: var(--ion-color-cusprimdark-rgb);
+  --ion-color-contrast: var(--ion-color-cusprimdark-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-cusprimdark-contrast-rgb);
+  --ion-color-shade: var(--ion-color-cusprimdark-shade);
+  --ion-color-tint: var(--ion-color-cusprimdark-tint);
+}
+
+.ion-color-custextdark {
+  --ion-color-base: var(--ion-color-custextdark);
+  --ion-color-base-rgb: var(--ion-color-custextdark-rgb);
+  --ion-color-contrast: var(--ion-color-custextdark-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-custextdark-contrast-rgb);
+  --ion-color-shade: var(--ion-color-custextdark-shade);
+  --ion-color-tint: var(--ion-color-custextdark-tint);
+}
+
+.heading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  padding: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+.tshirt{
+  
+  height: 30%;
+  width: 30%;
+}
+
+.cart_item {
+ 
+}
+.container{
+  box-shadow: 3px 3px 3px 0 #8F92A3;
+  padding: 10px;
+  margin: 10px;
+}
+
+.center{
+  border: 3px solid green
+
+}
+.demo {
+  display: inline-block;
+  vertical-align: middle
+}
+
+.demo1 {
+  display: inline-block;
+  vertical-align: middle;
+  color: rgba(22, 47, 86, 0.54);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.item_det{
+  display: inline-block;
+  vertical-align: middle;
+  color: rgba(22, 47, 86, 0.87)
+}
+
+.item_prize{
+  line-height: 24px;
+  font-size: 16px;
+  color:#162F56;
+  padding-top: 14px;
+}
+
+.warning{
+  position: absolute;
+  bottom: 0;
+  color: #162F56;
+  font-family: Lato-Bold;
+  
+  background-color: rgba(209, 45, 45, 0.1);
+  border-top: 2px solid rgba(209, 45, 45, 0.54);
+}
+
+.text_warning{
+  font-size: 14px;
+  padding: 20px;
+  line-height: 20px;
+}
+
+.paynowBtn{
+  position: absolute;
+  right: 10%;
+left: 10%;  
+  bottom:20%;
+  font-family: Lato-Bold;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.total_amount{
+  display: inline-block;
+  vertical-align: middle;
+  color: rgba(22, 47, 86, 0.38);
+  font-family: Lato-Bold;
+  font-size: 20px;
+}
+
+.amt_rs{
+  display: inline-block;
+  vertical-align: middle;
+  color:#162F56;
+  margin-left: 160px;
+  font-family: Lato-Bold;
+  font-size: 20px;
+}
+
+.footnote{
+  margin-left: 10%;
+  position: absolute;
+  bottom:28%;
+
+}
