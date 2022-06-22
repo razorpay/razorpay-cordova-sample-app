@@ -1,0 +1,69 @@
+{
+  "name": "ios-sim",
+  "version": "8.0.2",
+  "preferGlobal": "true",
+  "description": "launch iOS apps into the iOS Simulator from the command line (Xcode 8.0+)",
+  "main": "ios-sim.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ios-control/ios-sim"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "keywords": [
+    "ios-sim",
+    "iOS Simulator"
+  ],
+  "bin": {
+    "ios-sim": "./bin/ios-sim"
+  },
+  "bugs": {
+    "url": "https://github.com/phonegap/ios-sim/issues"
+  },
+  "author": "Shazron Abdullah",
+  "license": "MIT",
+  "dependencies": {
+    "bplist-parser": "^0.0.6",
+    "nopt": "1.0.9",
+    "plist": "^3.0.1",
+    "simctl": "^2"
+  },
+  "devDependencies": {
+    "acorn": "^6.1.1",
+    "babel-runtime": "^6.26.0",
+    "eslint": "^5.15.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jest": "^22.3.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "jest": "^24.1.0",
+    "jest-junit": "^6.3.0",
+    "mock-fs": "^4.8.0",
+    "stdout-stderr": "^0.1.9"
+  },
+  "scripts": {
+    "eslint": "eslint *.js src test",
+    "test": "jest --ci",
+    "posttest": "npm run eslint"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/*.js"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/jest.setup.js"
+    ],
+    "reporters": [
+      "default",
+      "jest-junit"
+    ],
+    "testEnvironment": "node",
+    "setupFilesAfterEnv": [
+      "./test/jest.setup.js"
+    ]
+  }
+}

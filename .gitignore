@@ -1,8 +1,2 @@
 .DS_Store
-rzp-cordova-example/node_modules
-rzp-ionic1-example/node_modules
-rzp-ionic2-example/node_modules
-rzp-ionic3-example/node_modules
-rzp-ionic4-example/node_modules
-rzp-ionic5-example/node_modules
-rzp-ionic6-example/node_modules
+rzp-ionic6-example/.angular

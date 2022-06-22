@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-cocoapod-support" version="1.6.2">
+    <name>Cordova CocoaPods Dependency Support</name>
+    <author>Carlos "blakgeek" Lawton</author>
+    <description>A Cordova/PhoneGap plugin to add support for CocoaPods dependencies.</description>
+    <keywords>cordova, ios, cocoapods, pod, pods</keywords>
+    <repo>https://github.com/blakgeek/cordova-plugin-cocoapods-support.git</repo>
+    <issue>https://github.com/blakgeek/cordova-plugin-cocoapods-support/issues</issue>
+    <license>MIT</license>
+    <engines>
+        <engine name="cordova" version="&gt;=6.0.0"/>
+    </engines>
+
+    <hook type="after_prepare" src="scripts/podify.js"/>
+</plugin>
