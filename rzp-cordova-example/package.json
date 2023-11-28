@@ -5,7 +5,9 @@
   "description": "A sample Apache Cordova application that responds to the deviceready event.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "refresh": "cordova plugin rm com.razorpay.cordova && cordova plugin add /Users/vivek.shindhe/Razorpay/Cordova/razorpay-cordova",
+    "android": "cordova run android"
   },
   "keywords": [
     "ecosystem:cordova"
@@ -18,13 +20,15 @@
   },
   "cordova": {
     "plugins": {
-      "cordova-plugin-whitelist": {}
+      "com.razorpay.cordova": {}
     },
     "platforms": [
-      "ios"
+      "ios",
+      "android"
     ]
   },
   "devDependencies": {
-    "cordova-plugin-whitelist": "^1.3.4"
+    "com.razorpay.cordova": "file:../../razorpay-cordova",
+    "cordova-android": "^12.0.1"
   }
 }

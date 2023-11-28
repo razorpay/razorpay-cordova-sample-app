@@ -63,6 +63,7 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
+        console.log("device ready")
         app.addRZPEventListener();
     },
 
@@ -71,7 +72,32 @@ var app = {
             RazorpayCheckout.open(rzpOptions, successCallback, cancelCallback);
             event.preventDefault();
         })
+
+        document.getElementById('link-new-upi-account').addEventListener('click', function (event) {
+            let mobileNumber = "9731585653";
+            let color = "#000000"
+            RazorpayCheckout.upiTurbo.linkNewUpiAccount(mobileNumber, color, function (upiAccounts){
+                alert(upiAccounts.data)
+            }, function(error){
+                alert(error)
+            })
+        })
+        document.getElementById('init-turbo').addEventListener('click', function (event){
+            RazorpayCheckout.initUpiTurbo()
+        })
+
+        document.getElementById('manage-upi-accounts').addEventListener('click', function (event) {
+            let mobileNumber = "8073945686";
+            let color = "#000000"
+            RazorpayCheckout.upiTurbo.linkNewUpiAccount(mobileNumber, color, function (upiAccounts){
+                alert(upiAccounts.data)
+            }, function(error){
+                alert(error)
+            })
+        })
     }
+
+
 };
 
 app.initialize();
