@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "refresh": "cordova plugin rm com.razorpay.cordova && cordova plugin add /Users/vivek.shindhe/Razorpay/Cordova/razorpay-cordova",
+    "refresh": "cordova plugin rm com.razorpay.cordova && cordova plugin add /Users/azhar.ali/Documents/Cordova/fresh/razorpay-cordova",
     "android": "cordova run android"
   },
   "keywords": [

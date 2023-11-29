@@ -18,24 +18,31 @@
  */
 
 var rzpOptions = {
-    key: "rzp_test_1DP5mmOlF5G5ag",
-    amount: "2000", // 2000 paise = INR 20
-    name: "Merchant Name",
-    description: "Purchase Description",
-    image: "https://i.imgur.com/n5tjHFD.png",
-    handler: function (response){
-        alert(response.razorpay_payment_id);
-    },
-    prefill: {
-        name: "Harshil Mathur",
-        email: "harshil@razorpay.com"
-    },
-    notes: {
-        address: "Hello World"
-    },
-    theme: {
-        color: "#F37254"
-    }
+    key: "rzp_test_0wFRWIZnH65uny",
+        amount: 2000,
+        currency: "INR",
+        name: "Merchant Name",
+        description: "Purchase Description",
+        prefill: {
+            contact: "9928815231",
+            email: "azhar.ali@razorpay.com"
+        },
+        notes: {
+            address: "Cordova plugin for UPI turbo"
+        },
+        theme: {
+            color: "#F37254"
+        },
+        experiments:{
+        upi_turbo: true
+        },
+        send_sms_hash: true,
+        retry: {
+             enabled: false,
+             max_count: 4
+        },
+        disable_redesign_v15: false,
+        ep: "https://api-web-turbo-upi.ext.dev.razorpay.in/test/checkout.html"
 };
 
 var successCallback = function(payment_id) {
@@ -74,7 +81,7 @@ var app = {
         })
 
         document.getElementById('link-new-upi-account').addEventListener('click', function (event) {
-            let mobileNumber = "9731585653";
+            let mobileNumber = "9928815231";
             let color = "#000000"
             RazorpayCheckout.upiTurbo.linkNewUpiAccount(mobileNumber, color, function (upiAccounts){
                 alert(upiAccounts.data)
@@ -83,13 +90,15 @@ var app = {
             })
         })
         document.getElementById('init-turbo').addEventListener('click', function (event){
-            RazorpayCheckout.initUpiTurbo()
+        let key = "rzp_test_0wFRWIZnH65uny";
+            RazorpayCheckout.initUpiTurbo(key)
+            alert("Turbo is initialized")
         })
 
         document.getElementById('manage-upi-accounts').addEventListener('click', function (event) {
-            let mobileNumber = "8073945686";
+            let mobileNumber = "9928815231";
             let color = "#000000"
-            RazorpayCheckout.upiTurbo.linkNewUpiAccount(mobileNumber, color, function (upiAccounts){
+            RazorpayCheckout.upiTurbo.manageUpiAccounts(mobileNumber, color, function (upiAccounts){
                 alert(upiAccounts.data)
             }, function(error){
                 alert(error)
