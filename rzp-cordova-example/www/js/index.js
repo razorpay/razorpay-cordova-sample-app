@@ -17,8 +17,7 @@
  * under the License.
  */
 
-
- var rzpOptions = {
+var rzpOptions = {
         key: "<Your_Merchant_Key>",
         amount: 2000,
         currency: "INR",
@@ -36,8 +35,10 @@
         },
         disable_redesign_v15: false,
         "experiments.upi_turbo": true,
-        ep: "https://api-web-turbo-upi.ext.dev.razorpay.in/test/checkout.html"
+        order_id: "<Your_Order_ID>",
+        ep: "https://api-web-turbo-upi.ext.dev.razorpay.in/test/checkout.html?branch=feat/turbo/tpv"
 };
+
 
 var successCallback = function(response) {
   alert("Payment Successful!! \n"+JSON.stringify(response))
@@ -71,13 +72,14 @@ var app = {
     addRZPEventListener: function() {
         document.getElementById('rzp-button').addEventListener('click', function(event) {
         let mobileNumber = getAndValidateMobileNumber()
-        if(mobileNumber!==null){
+        let order_id = getAndValidateOrderId()
+        if(mobileNumber!==null && order_id!=null){
         rzpOptions.prefill.contact = mobileNumber
+        rzpOptions.order_id = order_id
                     RazorpayCheckout.open(rzpOptions, successCallback, cancelCallback);
                     event.preventDefault();
         }
         })
-
 
         document.getElementById('link-new-upi-account').addEventListener('click', function (event) {
         showLoader();
@@ -108,15 +110,12 @@ var app = {
             })
             }
         })
-
         document.getElementById('init-turbo').addEventListener('click', function (event){
 
-        /*Set your merchant key here*/
         let key = "<Your_Merchant_Key>";
             RazorpayCheckout.initUpiTurbo(key)
             alert("Turbo is initialized")
         })
-
 
         document.getElementById('manage-upi-accounts').addEventListener('click', function (event) {
             let mobileNumber = getAndValidateMobileNumber()
@@ -148,6 +147,19 @@ var app = {
 
                     return mobileNumber;
         }
+
+        function getAndValidateOrderId() {
+                            let order_id = document.getElementById('order-id').value;
+
+                            // Validate orderID
+                                if (order_id == null || order_id.trim() == '') {
+                                hideLoader();
+                                    alert("Please enter Order ID.");
+                                    return null;
+                                }
+
+                            return order_id;
+                }
     }
 };
 app.initialize();

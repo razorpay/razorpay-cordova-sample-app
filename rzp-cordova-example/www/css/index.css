@@ -92,6 +92,12 @@ h1 {
         font-size: 16px; /* Adjust the value to set the desired font size */
     }
 
+#order-id {
+            padding: 2px;
+            font-size: 16px; /* Adjust the value to set the desired font size */
+            margin-top: 4px
+        }
+
 #loading-bar-spinner.spinner {
     display: none;
     left: 50%;
