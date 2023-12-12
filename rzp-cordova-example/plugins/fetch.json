@@ -7,10 +7,10 @@
     "is_top_level": false,
     "variables": {}
   },
-  "cordova-plugin-whitelist": {
+  "com.razorpay.cordova": {
     "source": {
-      "type": "registry",
-      "id": "cordova-plugin-whitelist@1"
+      "type": "local",
+      "path": "/Users/azhar.ali/Documents/Cordova/fresh/razorpay-cordova-sample-app/rzp-cordova-example/node_modules/com.razorpay.cordova"
     },
     "is_top_level": true,
     "variables": {}

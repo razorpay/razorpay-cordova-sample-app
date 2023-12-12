@@ -17,12 +17,14 @@
  * under the License.
  */
 
+
  var rzpOptions = {
+        key: "<Your_Merchant_Key>",
         amount: 2000,
         currency: "INR",
         prefill: {
-            contact: "1234567890",
-            email: "settipalli.jaswanth@razorpay.com"
+            contact: "9876543210",
+            email: "test@razorpay.com"
         },
         theme: {
             color: "#063970"
@@ -37,8 +39,8 @@
         ep: "https://api-web-turbo-upi.ext.dev.razorpay.in/test/checkout.html"
 };
 
-var successCallback = function(payment_id) {
-  alert('payment_id: ' + payment_id)
+var successCallback = function(response) {
+  alert("Payment Successful!! \n"+JSON.stringify(response))
 };
 
 var cancelCallback = function(error) {
@@ -76,45 +78,76 @@ var app = {
         }
         })
 
+
         document.getElementById('link-new-upi-account').addEventListener('click', function (event) {
-           let mobileNumber = getAndValidateMobileNumber()
+        showLoader();
+           let mobileNumber = getAndValidateMobileNumber();
             let color = "#063970"
             if(mobileNumber!==null){
             console.log("mobile number is : "+mobileNumber)
-           RazorpayCheckout.upiTurbo.linkNewUpiAccount(mobileNumber, color, function (upiAccounts){
-                           alert(upiAccounts.data)
-                       }, function(error){
-                           alert(error)
-                       })
+           RazorpayCheckout.upiTurbo.linkNewUpiAccount(mobileNumber, color,
+           function (response){
+              hideLoader();
+              console.log(response)
+              try {
+                 var jsonArray = JSON.parse(response);
+                 if(jsonArray && jsonArray.length>0){
+                 alert("Account linked Successfully!! \n\n\n Account List JSON Data:- \n\n"+response)
+                 }
+                 else{
+                 alert("No linked accounts found, try with another bank or number!")
+                 }
+                  } catch (error) {
+                        // Handle parsing error
+                           console.error('Error parsing JSON array:', error);
+                    }
+           },
+            function(error){
+               hideLoader();
+               alert(JSON.stringify(error))
+            })
             }
         })
+
         document.getElementById('init-turbo').addEventListener('click', function (event){
-        let key = "rzp_test_0wFRWIZnH65uny";
+
+        /*Set your merchant key here*/
+        let key = "<Your_Merchant_Key>";
             RazorpayCheckout.initUpiTurbo(key)
             alert("Turbo is initialized")
         })
+
 
         document.getElementById('manage-upi-accounts').addEventListener('click', function (event) {
             let mobileNumber = getAndValidateMobileNumber()
             let color = "#063970"
              if(mobileNumber!==null){
              RazorpayCheckout.upiTurbo.manageUpiAccounts(mobileNumber, color, function(error){
-                             alert(error)
+                              alert(JSON.stringify(error))
                          })
              }
         })
+
+        function showLoader() {
+            document.getElementById('loading-bar-spinner').style.display = 'flex';
+        }
+
+        function hideLoader() {
+            document.getElementById('loading-bar-spinner').style.display = 'none';
+        }
 
         function getAndValidateMobileNumber() {
                     let mobileNumber = document.getElementById('mobileNumber').value;
 
                     // Validate if the mobile number is exactly 10 digits long
                         if (!/^\d{10}$/.test(mobileNumber)) {
+                        hideLoader();
                             alert("Please enter a valid 10-digit mobile number.");
                             return null; // Return null or another value to indicate validation failure
                         }
 
                     return mobileNumber;
-                }
+        }
     }
 };
 app.initialize();
