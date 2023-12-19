@@ -17,58 +17,8 @@
  * under the License.
  */
 
-
-//Standard Checkout without Turbo Payload
-/*var rzpOptions = {
-    key: "rzp_test_1DP5mmOlF5G5ag",
-    amount: "2000", // 2000 paise = INR 20
-    name: "Merchant Name",
-    description: "Purchase Description",
-    image: "https://i.imgur.com/n5tjHFD.png",
-    handler: function (response){
-        alert(response.razorpay_payment_id);
-    },
-    prefill: {
-        name: "Harshil Mathur",
-        email: "harshil@razorpay.com"
-    },
-    notes: {
-        address: "Hello World"
-    },
-    theme: {
-        color: "#F37254"
-    }
-};*/
-
-//UAT - key: "rzp_test_0wFRWIZnH65uny"
-//MOCK - key: "rzp_test_vacN5cmVqNIlhO"
-//Non TPV Payload
- /*var rzpOptions = {
-        key: "rzp_test_vacN5cmVqNIlhO",
-        amount: 2000,
-        currency: "INR",
-        prefill: {
-            contact: "9876543210",
-            email: "azhar.ali@razorpay.com"
-        },
-        theme: {
-            color: "#063970"
-        },
-        send_sms_hash: true,
-        retry: {
-             enabled: false,
-             max_count: 4
-        },
-        disable_redesign_v15: false,
-        "experiments.upi_turbo": true,
-        ep: "https://api-web-turbo-upi.ext.dev.razorpay.in/test/checkout.html"
-};*/
-
-//TPV Payload
-//UAT - key: "rzp_test_5sHeuuremkiApj"
-//MOCK - key: "rzp_test_vacN5cmVqNIlhO"
 var rzpOptions = {
-        key: "rzp_test_5sHeuuremkiApj",
+        key: "<your_merchant_key>",
         amount: 2000,
         currency: "INR",
         prefill: {
@@ -85,7 +35,7 @@ var rzpOptions = {
         },
         disable_redesign_v15: false,
         "experiments.upi_turbo": true,
-        order_id: "order_N8cKZHHrWPDNzN",
+        order_id: "<your_order_id>",
         ep: "https://api-web-turbo-upi.ext.dev.razorpay.in/test/checkout.html?branch=feat/turbo/tpv"
 };
 
@@ -123,9 +73,11 @@ var app = {
         document.getElementById('rzp-button').addEventListener('click', function(event) {
         let mobileNumber = getAndValidateMobileNumber()
         let order_id = getAndValidateOrderId()
-        if(mobileNumber!==null && order_id!=null){
+        let key = getAndValidateMerchantKey()
+        if(mobileNumber!==null && order_id!==null && key!==null){
         rzpOptions.prefill.contact = mobileNumber
         rzpOptions.order_id = order_id
+        rzpOptions.key = key
                     RazorpayCheckout.open(rzpOptions, successCallback, cancelCallback);
                     event.preventDefault();
         }
@@ -161,10 +113,11 @@ var app = {
             }
         })
         document.getElementById('init-turbo').addEventListener('click', function (event){
-
-        let key = "rzp_test_5sHeuuremkiApj";
-            RazorpayCheckout.initUpiTurbo(key)
-            alert("Turbo is initialized")
+        let key = getAndValidateMerchantKey()
+        if(key!==null){
+         RazorpayCheckout.initUpiTurbo(key)
+         alert("Turbo is initialized")
+        }
         })
 
         document.getElementById('manage-upi-accounts').addEventListener('click', function (event) {
@@ -200,17 +153,20 @@ var app = {
         }
 
         function getAndValidateOrderId() {
-                            let order_id = document.getElementById('order-id').value;
+           let order_id = document.getElementById('order-id').value;
+           return order_id;
+        }
 
-                            // Validate orderID
-                                /*if (order_id == null || order_id.trim() == '') {
-                                hideLoader();
-                                    alert("Please enter Order ID.");
-                                    return null;
-                                }*/
-
-                            return order_id;
-                }
-    }
+        function getAndValidateMerchantKey() {
+           let merchant_key = document.getElementById('merchantKey').value;
+           // Validate Merchant key
+           if (merchant_key == null || merchant_key.trim() == '') {
+              hideLoader();
+              alert("Please enter Merchant ID.");
+              return null;
+            }
+           return merchant_key;
+        }
+   }
 };
 app.initialize();

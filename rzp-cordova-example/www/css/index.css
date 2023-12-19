@@ -87,6 +87,10 @@ h1 {
     margin: 8px;
 }
 
+#merchantKey {
+        padding: 2px;
+        font-size: 16px; /* Adjust the value to set the desired font size */
+    }
  #mobileNumber {
         padding: 2px;
         font-size: 16px; /* Adjust the value to set the desired font size */
