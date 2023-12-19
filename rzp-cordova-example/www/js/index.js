@@ -17,13 +17,39 @@
  * under the License.
  */
 
-var rzpOptions = {
-        key: "<Your_Merchant_Key>",
+
+//Standard Checkout without Turbo Payload
+/*var rzpOptions = {
+    key: "rzp_test_1DP5mmOlF5G5ag",
+    amount: "2000", // 2000 paise = INR 20
+    name: "Merchant Name",
+    description: "Purchase Description",
+    image: "https://i.imgur.com/n5tjHFD.png",
+    handler: function (response){
+        alert(response.razorpay_payment_id);
+    },
+    prefill: {
+        name: "Harshil Mathur",
+        email: "harshil@razorpay.com"
+    },
+    notes: {
+        address: "Hello World"
+    },
+    theme: {
+        color: "#F37254"
+    }
+};*/
+
+//UAT - key: "rzp_test_0wFRWIZnH65uny"
+//MOCK - key: "rzp_test_vacN5cmVqNIlhO"
+//Non TPV Payload
+ /*var rzpOptions = {
+        key: "rzp_test_vacN5cmVqNIlhO",
         amount: 2000,
         currency: "INR",
         prefill: {
             contact: "9876543210",
-            email: "test@razorpay.com"
+            email: "azhar.ali@razorpay.com"
         },
         theme: {
             color: "#063970"
@@ -35,7 +61,31 @@ var rzpOptions = {
         },
         disable_redesign_v15: false,
         "experiments.upi_turbo": true,
-        order_id: "<Your_Order_ID>",
+        ep: "https://api-web-turbo-upi.ext.dev.razorpay.in/test/checkout.html"
+};*/
+
+//TPV Payload
+//UAT - key: "rzp_test_5sHeuuremkiApj"
+//MOCK - key: "rzp_test_vacN5cmVqNIlhO"
+var rzpOptions = {
+        key: "rzp_test_5sHeuuremkiApj",
+        amount: 2000,
+        currency: "INR",
+        prefill: {
+            contact: "9876543210",
+            email: "azhar.ali@razorpay.com"
+        },
+        theme: {
+            color: "#063970"
+        },
+        send_sms_hash: true,
+        retry: {
+             enabled: false,
+             max_count: 4
+        },
+        disable_redesign_v15: false,
+        "experiments.upi_turbo": true,
+        order_id: "order_N8cKZHHrWPDNzN",
         ep: "https://api-web-turbo-upi.ext.dev.razorpay.in/test/checkout.html?branch=feat/turbo/tpv"
 };
 
@@ -112,7 +162,7 @@ var app = {
         })
         document.getElementById('init-turbo').addEventListener('click', function (event){
 
-        let key = "<Your_Merchant_Key>";
+        let key = "rzp_test_5sHeuuremkiApj";
             RazorpayCheckout.initUpiTurbo(key)
             alert("Turbo is initialized")
         })
@@ -131,6 +181,7 @@ var app = {
             document.getElementById('loading-bar-spinner').style.display = 'flex';
         }
 
+        // Function to hide the loader
         function hideLoader() {
             document.getElementById('loading-bar-spinner').style.display = 'none';
         }
@@ -152,11 +203,11 @@ var app = {
                             let order_id = document.getElementById('order-id').value;
 
                             // Validate orderID
-                                if (order_id == null || order_id.trim() == '') {
+                                /*if (order_id == null || order_id.trim() == '') {
                                 hideLoader();
                                     alert("Please enter Order ID.");
                                     return null;
-                                }
+                                }*/
 
                             return order_id;
                 }
