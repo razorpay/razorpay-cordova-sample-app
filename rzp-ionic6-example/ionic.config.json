@@ -1,0 +1,7 @@
+{
+  "name": "rzp-ionic6-example",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
