@@ -1,3 +1,5 @@
-platform :ios, '7.0'
+platform :ios, '10.0'
+use_frameworks!
 target 'HelloCordova' do
+	pod 'razorpay-pod'
 end

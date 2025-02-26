@@ -1,0 +1,31 @@
+import type { ProjectGraph, ProjectGraphExternalNode, ProjectGraphNode } from './interfaces';
+/**
+ * Builder for adding nodes and dependencies to a {@link ProjectGraph}
+ */
+export declare class ProjectGraphBuilder {
+    readonly graph: ProjectGraph;
+    constructor(g?: ProjectGraph);
+    /**
+     * Adds a project node to the project graph
+     */
+    addNode(node: ProjectGraphNode): void;
+    /**
+     * Adds a external node to the project graph
+     */
+    addExternalNode(node: ProjectGraphExternalNode): void;
+    /**
+     * Adds a dependency from source project to target project
+     */
+    addImplicitDependency(sourceProjectName: string, targetProjectName: string): void;
+    /**
+     * Add an explicit dependency from a file in source project to target project
+     */
+    addExplicitDependency(sourceProjectName: string, sourceProjectFile: string, targetProjectName: string): void;
+    /**
+     * Set version of the project graph
+     */
+    setVersion(version: string): void;
+    getUpdatedProjectGraph(): ProjectGraph;
+    private calculateTargetDepsFromFiles;
+    private calculateAlreadySetTargetDeps;
+}
