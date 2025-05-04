@@ -7,10 +7,10 @@
     "is_top_level": false,
     "variables": {}
   },
-  "cordova-plugin-whitelist": {
+  "com.razorpay.cordova": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-whitelist@1"
+      "id": "https://github.com/razorpay/razorpay-cordova.git"
     },
     "is_top_level": true,
     "variables": {}

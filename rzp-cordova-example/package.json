@@ -13,18 +13,22 @@
   "author": "Apache Cordova Team",
   "license": "Apache-2.0",
   "dependencies": {
-    "cordova-ios": "^5.1.1",
+    "com.razorpay.cordova": "github:razorpay/razorpay-cordova",
     "cordova-plugin-cocoapod-support": "^1.6.2"
   },
   "cordova": {
     "plugins": {
-      "cordova-plugin-whitelist": {}
+      "com.razorpay.cordova": {}
     },
     "platforms": [
+      "browser",
+      "android",
       "ios"
     ]
   },
   "devDependencies": {
-    "cordova-plugin-whitelist": "^1.3.4"
+    "cordova-android": "^10.1.2",
+    "cordova-browser": "^6.0.0",
+    "cordova-ios": "^6.2.0"
   }
 }
