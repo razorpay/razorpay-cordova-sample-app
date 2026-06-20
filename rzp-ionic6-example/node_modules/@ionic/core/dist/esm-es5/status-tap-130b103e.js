@@ -1,0 +1,4 @@
+import{__awaiter,__generator}from"tslib";
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */import{f as readTask,c as writeTask}from"./index-88bdeaae.js";import{f as findClosestIonContent,s as scrollToTop}from"./index-8bf9b0cd.js";import{c as componentOnReady}from"./helpers-4d272360.js";import"./index-9ac92660.js";var startStatusTap=function(){var t=window;t.addEventListener("statusTap",(function(){readTask((function(){var e=t.innerWidth;var n=t.innerHeight;var r=document.elementFromPoint(e/2,n/2);if(!r){return}var o=findClosestIonContent(r);if(o){new Promise((function(t){return componentOnReady(o,t)})).then((function(){writeTask((function(){return __awaiter(void 0,void 0,void 0,(function(){return __generator(this,(function(t){switch(t.label){case 0:o.style.setProperty("--overflow","hidden");return[4,scrollToTop(o,300)];case 1:t.sent();o.style.removeProperty("--overflow");return[2]}}))}))}))}))}}))}))};export{startStatusTap};

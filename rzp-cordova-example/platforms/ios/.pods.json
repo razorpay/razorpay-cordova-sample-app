@@ -1,6 +1,11 @@
 {
-	"pods": {},
+	"pods": {
+		"razorpay-pod": {
+			"type": "pod",
+			"name": "razorpay-pod"
+		}
+	},
 	"sources": {},
-	"iosMinVersion": "7.0",
-	"useFrameworks": false
+	"iosMinVersion": "10.0",
+	"useFrameworks": true
 }
